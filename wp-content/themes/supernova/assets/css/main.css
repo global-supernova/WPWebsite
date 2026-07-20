@@ -451,6 +451,89 @@ img {
 	cursor: pointer;
 }
 
+/* Contact form (Supernova Core shortcode) */
+.supernova-contact {
+	max-width: 640px;
+}
+
+.supernova-contact__hp {
+	position: absolute !important;
+	left: -9999px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+.supernova-contact__notice {
+	padding: 14px 18px;
+	border-radius: var(--sn-radius);
+	margin-bottom: 24px;
+	border: 1px solid transparent;
+}
+
+.supernova-contact__notice--success {
+	background: #e6faf5;
+	border-color: var(--sn-accent);
+	color: #0a6b5b;
+}
+
+.supernova-contact__notice--error {
+	background: #fdecec;
+	border-color: #e0736b;
+	color: #a12a20;
+}
+
+.supernova-contact__notice ul {
+	margin: 8px 0 0;
+	padding-left: 20px;
+}
+
+.supernova-contact__field {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	margin-bottom: 20px;
+}
+
+.supernova-contact__field label {
+	font-weight: 600;
+	font-size: 0.95rem;
+}
+
+.supernova-contact__field input,
+.supernova-contact__field textarea {
+	width: 100%;
+	padding: 12px 14px;
+	border: 1px solid var(--sn-border);
+	border-radius: 8px;
+	font: inherit;
+	color: var(--sn-text);
+	background: #fff;
+}
+
+.supernova-contact__field input:focus,
+.supernova-contact__field textarea:focus {
+	outline: 2px solid var(--sn-primary);
+	outline-offset: 1px;
+	border-color: var(--sn-primary);
+}
+
+.supernova-contact__field textarea {
+	resize: vertical;
+}
+
+.supernova-contact__actions .button {
+	border: 0;
+	cursor: pointer;
+	background: var(--sn-primary);
+	color: #fff;
+}
+
+.supernova-contact__actions .button:hover {
+	background: var(--sn-primary-dark);
+}
+
 /* Responsive */
 @media (max-width: 860px) {
 	.content-area {

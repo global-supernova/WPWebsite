@@ -76,6 +76,20 @@ docker compose exec -T wpcli wp core install \
 > The page copy lives in `data/*.html` as editable WordPress block markup, so you
 > can tweak the seed content without touching the script.
 
+### Contact form
+
+The Contact page includes a working contact form, provided by the Supernova Core
+plugin via the `[supernova_contact_form]` shortcode. It validates input, blocks
+bots with a honeypot and nonce, and emails the submission to the site's admin
+address (Reply-To set to the sender). Drop the shortcode on any page to reuse it,
+optionally overriding the recipient: `[supernova_contact_form to="sales@example.com"]`.
+
+Submissions are sent with `wp_mail()`. A stock Docker WordPress container has no
+mail transport, so in local development messages won't actually be delivered
+unless you add one — e.g. run [MailHog](https://github.com/mailhog/MailHog) and
+point WordPress at it, or install an SMTP plugin. Validation, the success/error
+states, and the redirect all work regardless.
+
 ## Project layout
 
 ```
