@@ -44,12 +44,37 @@ docker compose exec wpcli wp theme activate supernova
 docker compose exec wpcli wp plugin activate supernova-core
 ```
 
-### Optional: seed some demo content
+### Seed sample content
+
+The repo ships with sample content modelled on
+[Global Supernova Solutions](https://global-supernova.com) — a Home page, About,
+Services, Case Studies, Careers, Contact, a Blog, six Service entries (the
+`Project` custom post type), a few blog posts, and a primary navigation menu.
+
+Once WordPress is installed (finish the setup wizard, or install headlessly as
+shown below), run:
 
 ```bash
-docker compose exec wpcli wp post generate --count=5
-docker compose exec wpcli wp option update posts_per_page 6
+./bin/seed.sh
 ```
+
+The script is **idempotent** — it keys everything by slug, so re-running it
+updates existing content instead of creating duplicates. It also activates the
+theme and plugin and configures the static front page.
+
+To install WordPress headlessly first (no browser needed):
+
+```bash
+docker compose exec -T wpcli wp core install \
+  --url=http://localhost:8080 \
+  --title="Global Supernova Solutions" \
+  --admin_user=admin --admin_password=admin \
+  --admin_email=you@example.com --skip-email
+./bin/seed.sh
+```
+
+> The page copy lives in `data/*.html` as editable WordPress block markup, so you
+> can tweak the seed content without touching the script.
 
 ## Project layout
 
@@ -57,6 +82,9 @@ docker compose exec wpcli wp option update posts_per_page 6
 .
 ├── docker-compose.yml            # Local dev stack (WordPress + MariaDB + WP-CLI)
 ├── .env.example                  # Copy to .env for local configuration
+├── bin/
+│   └── seed.sh                   # Idempotent WP-CLI content seeder
+├── data/                         # Seed page content (WordPress block markup)
 ├── wp-content/
 │   ├── themes/
 │   │   └── supernova/            # Custom theme
