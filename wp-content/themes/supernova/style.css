@@ -1,0 +1,17 @@
+/*
+Theme Name: Supernova
+Theme URI: https://github.com/global-supernova/wpwebsite
+Author: Global Supernova
+Author URI: https://github.com/global-supernova
+Description: A modern, lightweight, block-friendly WordPress theme built for Global Supernova. Ships with a custom front page, responsive navigation, and a clean typographic system.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.5
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: supernova
+Tags: custom-menu, featured-images, block-styles, wide-blocks, translation-ready
+*/
+
+/* Styles are loaded from assets/css/main.css via functions.php. */

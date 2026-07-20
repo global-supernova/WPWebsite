@@ -1,0 +1,39 @@
+# Environment / secrets
+.env
+
+# WordPress core (provided by the Docker image, not committed)
+/wp-admin/
+/wp-includes/
+/wp-*.php
+/index.php
+/xmlrpc.php
+/license.txt
+/readme.html
+
+# Uploads and generated content
+wp-content/uploads/
+wp-content/upgrade/
+wp-content/cache/
+wp-content/backups/
+wp-content/blogs.dir/
+
+# Third-party themes/plugins pulled at runtime (keep only our own, tracked below)
+wp-content/plugins/hello.php
+wp-content/plugins/akismet/
+wp-content/themes/twenty*/
+
+# Local WordPress config
+wp-config.php
+
+# Database dumps
+*.sql
+*.sqlite
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/
+node_modules/
+vendor/
