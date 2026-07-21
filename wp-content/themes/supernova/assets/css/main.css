@@ -206,7 +206,7 @@ img {
 	margin-inline: auto;
 	/* Keep the heading legible across the full gradient, including the
 	   lighter purple end where plain white loses contrast. */
-	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+	text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 }
 
 .hero__subtitle {
