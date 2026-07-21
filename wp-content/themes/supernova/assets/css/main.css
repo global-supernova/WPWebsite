@@ -194,7 +194,10 @@ img {
 	text-transform: uppercase;
 	letter-spacing: 0.18em;
 	font-size: 0.8rem;
-	color: var(--sn-accent);
+	/* Brighter mint + subtle shadow so the eyebrow keeps contrast across the
+	   full gradient, including the lighter purple end. */
+	color: #5ff2dd;
+	text-shadow: 0 1px 4px rgba(0, 0, 0, 0.55);
 	margin: 0 0 12px;
 }
 
