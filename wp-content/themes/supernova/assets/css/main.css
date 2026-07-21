@@ -199,11 +199,14 @@ img {
 }
 
 .hero__title {
-	color: #fff;
+	color: #ffffff;
 	font-size: clamp(2rem, 5vw, 3.4rem);
 	margin: 0 0 16px;
 	max-width: 18ch;
 	margin-inline: auto;
+	/* Keep the heading legible across the full gradient, including the
+	   lighter purple end where plain white loses contrast. */
+	text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
 }
 
 .hero__subtitle {
