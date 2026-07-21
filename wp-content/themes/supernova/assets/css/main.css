@@ -214,7 +214,10 @@ img {
 
 .hero__subtitle {
 	font-size: 1.15rem;
-	color: rgba(255, 255, 255, 0.85);
+	/* Brighter text + subtle shadow so the subtitle keeps contrast across the
+	   full gradient, including the lighter purple end. */
+	color: rgba(255, 255, 255, 0.95);
+	text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
 	max-width: 60ch;
 	margin: 0 auto 28px;
 }
